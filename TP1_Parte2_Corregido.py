@@ -92,22 +92,10 @@ print("La media de ",num1, ",",num2, " y ",num3, " es: ",media )
 """Ejercicio 7"""
 
 
-minutos_1 = int(input("Ingrese minutos a transformar: "))
-hora_1 = 0
-con__= "False"
-
-while (con__ == "False"):
-    if(minutos_1 >= 60):
-        minutos_1 = minutos_1 - 60
-        hora_1 = hora_1 + 1
-    else:
-        con__="True"
-if(hora_1 == 0):
-    print("Corresponde a",minutos_1, "minutos")
-elif(hora_1 == 1):
-    print("Corresponde a",hora_1,"hora y",minutos_1, "minutos")
-else:
-    print("Corresponde a",hora_1, "horas",minutos_1, "minutos")
+min = int(input("Ingrese minutos: "))
+hours = int(min / 60)
+min2 = min % 60
+print(f"{hours}:{min2}")
 
 
     """Ejercicio 8"""
@@ -200,37 +188,31 @@ print(f"Número A:{a} Número B:{b}")
 """Ejercicio 15"""
 
 
-hora_ini = int(input("Ingresar la hora de salida: "))
-minutos_ini = int(input("Ingresar los minutos de salida: "))
-segundos_ini = int(input("Ingresar los segundos de salida: "))
+hours = int(input("Hora: "))
+min = int(input("Minutos: "))
+sec = int(input("Segundos: "))
+print(f"Hora de salida {hours}:{min}:{sec}")
 
-print(f"{hora_ini}:{minutos_ini}:{segundos_ini}")
+t = int(input("Tiempo de viaje (segundos): "))
 
-tiempo_viaje_hora = int(input("Ingrese el tiempo de viaje (horas): "))
-tiempo_viaje_minutos = int(input("Ingrese el tiempo de viaje (minutos): "))
-tiempo_viaje_segundos = int(input("Ingrese el tiempo de viaje (segundos): "))
+hours2 = int(t / 3600)
+min2 = int((t % 3600) / 60)
+sec2 = int(t % 60)
 
-print(f"{tiempo_viaje_hora}:{tiempo_viaje_minutos}:{tiempo_viaje_segundos}")
+total_hours = hours + hours2
+total_min = min + min2
+total_sec = sec + sec2
 
-hora_llegada = hora_ini + tiempo_viaje_hora
-minutos_llegada = minutos_ini + tiempo_viaje_minutos
-segundos_llegada = segundos_ini + tiempo_viaje_segundos
+if (total_sec >= 60):
+    total_sec = total_sec - 60
+    total_min = total_min + 1  
+    if (total_min >= 60):
+        total_min = total_min - 60
+        total_hours = total_hours + 1
+        if (total_hours >= 24):
+            total_hours = total_hours - 24
 
-con_ = "False"
-
-while con_ == "False":
-    if (segundos_llegada >= 60):
-        segundos_llegada = segundos_llegada - 60
-        minutos_llegada = minutos_llegada + 1
-    elif (minutos_llegada >= 60):
-        minutos_llegada = minutos_llegada - 60
-        hora_llegada = hora_llegada + 1
-    elif (hora_llegada >= 24):
-        hora_llegada = hora_llegada - 24
-    else:
-        con_ = "true"
-
-print(f"El ciclista llegó a las {hora_llegada}:{minutos_llegada}:{segundos_llegada}")
+print(f"Hora de llegada: {total_hours}:{total_min}:{total_sec}")
 
 
 """Ejercicio 16"""
@@ -276,9 +258,8 @@ print(f"{dia_nac}/{mes_nac}/{anio_nac}")
 """Ejercicio 20"""
 
 
-print("Ingrese su fecha de nacimiento")
-nac = str(input("Dia: ") + "/" + input("Mes: ") + "/" + input("Año: "))
-print(nac)
+fecha = input("Ingrese su fecha de nacimiento (DDMMAAAA): ")
+print(fecha[0:2],"/",fecha[2:4],"/",fecha[4:8])
 
 
 """Ejercicio 21"""
