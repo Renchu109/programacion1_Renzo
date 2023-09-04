@@ -86,5 +86,5 @@ nombre_mayus = "RENZO"
 print(nombre_mayus.lower())
 
 #Ejercicio 16
-nombre_mayus = "RENZO"
-print(nombre_mayus.capitalize())
+nombre_mayus = "RENZO DI LAUDO"
+print(nombre_mayus.title())
