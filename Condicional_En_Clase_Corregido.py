@@ -2,9 +2,8 @@
 #Ejercicios en clase - Condicionales
 
 
-#Solicito ingreso de fecha formato "[día], DD/MM" , permitiendo uso de mayúsculas
-print("Ingrese la fecha")
-fecha = input("Ingresar dia ") + ", " + input("Ingresar fecha (dd/mm) ") + "/" + input("")
+#Solicito ingreso de fecha formato "día, DD/MM" , permitiendo uso de mayúsculas
+fecha = input("Ingrese la fecha (formato día, DD/MM): ")
 print(fecha.lower())
 
 #Asigno a variables (str e int) a los datos ingresados por el usuario en el bloque de códigos anterior
