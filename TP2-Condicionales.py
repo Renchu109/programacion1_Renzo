@@ -60,20 +60,20 @@ elif (anio % 100 == 0 and anio % 400 == 0):
 else:
     print("El año ingresado no es bisiesto")
 
-    #Ejercicio 7
+#Ejercicio 7
 
 num_1 = int(input("Ingrese un primer número: "))
 num_2 = int(input("Ingrese un segundo número: "))
 num_3 = int(input("Ingrese un tercer número: "))
 
-mayor = num_1
+menor = num_1
 
-if (num_2 > mayor and num_2 > num_3):
-    mayor = num_2
-elif (num_3 > mayor and num_3 > num_2):
-    mayor = num_3
+if (num_2 < menor and num_2 < num_3):
+    menor = num_2
+elif (num_3 < menor and num_3 < num_2):
+    menor = num_3
 
-print("El mayor es:",mayor)
+print("El menor es:",menor)
 
 #Ejercicio 8
 
@@ -163,8 +163,6 @@ menor = 0
 
 if (num1 < 0 or num2 < 0):
     print("Ingresó un número negativo.")
-elif (num1 == 0 or num2 == 0):
-    print("Ingresó un número nulo")
 
 if (num1 > num2):
     mayor = num1
@@ -185,15 +183,22 @@ else:
 #Ejercicio 14 
 
 print("Ingrese los coeficientes de una ecuación de primer grado (a x + b = 0)")
-coe_a=int(input("Ingrese ¨a¨ "))
-coe_b=int(input("Ingrese ¨b¨ "))
-respues_=-coe_b/coe_a
-coe_a=str(coe_a)
-coe_b=str(coe_b)
-respues_=str(respues_)
-print("El valor de x es: "+respues_)
-print("La formula quedaria: "+coe_a
-      +"*"+respues_+"+"+coe_b+"="+"0")
+
+coe_a=int(input("Ingrese ¨a¨ (a debe ser distinto de 0)"))
+
+if (coe_a != 0):
+    coe_b=int(input("Ingrese ¨b¨ "))
+
+    respues_=-coe_b/coe_a
+    coe_a=str(coe_a)
+    coe_b=str(coe_b)
+    respues_=str(respues_)
+    
+    print("El valor de x es: "+respues_)
+    print("La formula quedaria: "+coe_a
+        +"*"+respues_+"+"+coe_b+"="+"0")
+else:
+    print("a debe ser distinto de 0")
 
 #Ejercicio 15: 
 
@@ -230,7 +235,10 @@ elif operacion == 2:
 elif operacion == 3:
   print(f"Resultado: {valor1 - valor2}")
 elif operacion == 4:
-  print(f"Resultado: {valor1 / valor2}")
+  if (valor2 == 0):
+    print("No se puede dividir por 0")
+  else:
+    print(f"Resultado: {valor1 / valor2}")
 else:
   print("Operacion invalida")
 
@@ -283,10 +291,13 @@ descuento = .7
 
 cantidad_lapices = int(input("Ingrese cantidad de lapices: "))
 
-if cantidad_lapices >= 1000:
-  total = precio_lapiz * cantidad_lapices
-  precio_final = total - (total * descuento)
-  print(f"Precio final: ${round(precio_final)}")
+if (cantidad_lapices >= 1000):
+    total = precio_lapiz * cantidad_lapices
+    precio_final = total - (total * descuento)
+    print(f"Precio final: ${round(precio_final)}")
+elif (cantidad_lapices < 1000):
+    precio_final = precio_lapiz * cantidad_lapices
+    print(f"Precio final: ${precio_final}")
 
 
 #Ejercicio 20
